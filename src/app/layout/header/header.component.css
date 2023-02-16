@@ -1,10 +1,41 @@
 .header {
     text-align: center;
-    background: #33B5E5;
     color: #fff;
     padding: 12px;
 }
 
 a {
     color: #ffffff;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+button {
+    background: none;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+mat-toolbar-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+mat-icon {
+    margin-right: 4px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+#matMenu {
+    background: #fff;
+    color: #000;
 }

@@ -1,2 +1,8 @@
-<p>product-list works!</p>
-<app-product-item *ngFor="let product of products" [product]="product"></app-product-item>
+<p>List of products available!</p>
+
+    <span class="grid-products">
+        <app-product-item
+        *ngFor="let product of products"
+        [product]="product"
+        ></app-product-item>
+    </span>

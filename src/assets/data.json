@@ -22,5 +22,21 @@
         "description": "Product 3 description",
         "category": "Category 3",
         "imageUrl": "https://picsum.photos/200/300"
+    },
+    {
+        "id": 4,
+        "name": "Product 4",
+        "price": 400,
+        "description": "Product 4 description",
+        "category": "Category 3",
+        "imageUrl": "https://picsum.photos/200/300"
+    },
+    {
+        "id": 5,
+        "name": "Product 5",
+        "price": 400,
+        "description": "Product 5 description",
+        "category": "Category 2",
+        "imageUrl": "https://picsum.photos/200/300"
     }
 ]

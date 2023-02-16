@@ -1,9 +1,9 @@
 .product-image {      
   list-style-type: none;
-  width: 290px;
-  padding: 20px;
-  margin: 6px 6px;        
-  border: 1px solid #33B5E5;
+  width: 70%;
+  margin: 6px 6px;   
+  border: 1px solid #ccc; 
+  border-radius: 5px;
 } 
   
 .product-container {
@@ -13,9 +13,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  padding: 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .select-input {
   width: 108px; 
   margin-bottom: 8px;
+}
+
+input {
+  width: 20%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.product-button {
+  width: 70%;
+  background-color: #c2185b;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
