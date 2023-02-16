@@ -1,0 +1,6 @@
+<p class="product-container">{{product?.name}}
+    <img class="product-image" src="{{product?.imageUrl}}" alt="{{product?.name}}">
+    <span class="product-price">{{product?.price | currency}}</span>
+    <button class="product-button" (click)="addToCart(product)">Add to cart</button>
+</p>
+
