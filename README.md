@@ -1,27 +1,30 @@
-# AlxFullstackStoreProject
+# E-commerce application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+MyStore is Angular application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Show list of available products.
+- Show details page of any selected product.
+- Add quantity of a product to the user's cart.
+- Checkout and confirm purchase.
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project requires only ```npm install``` and ```ng serve``` to install and launch the application.
+## Installation
 
-## Build
+Step-by-step instructions on how to install and run this Angular app locally.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Example:
 
-## Running unit tests
+```
+$ git clone https://github.com/SouaadMa/ALX-store-fullstack.git
+$ cd ALX-store-fullstack
+$ npm install
+$ ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+To run the app, navigate to `http://localhost:4200/`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
