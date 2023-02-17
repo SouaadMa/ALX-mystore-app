@@ -23,7 +23,12 @@ export class HeaderComponent {
     console.log('shopping cart clicked');
     // navigate to cart
     this.router.navigate(['/cart']);
+  }
 
+  onclick_wishlist(): void {
+    console.log('wishlist clicked');
+    // navigate to wishlist
+    this.router.navigate(['/wishlist']);
   }
 
 }
