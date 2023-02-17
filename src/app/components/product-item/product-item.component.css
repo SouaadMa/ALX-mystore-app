@@ -35,11 +35,24 @@ input {
 
 .product-button {
   width: 70%;
-  background-color: #c2185b;
-  color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  border: 1px solid #d7d7d7;
+}
+
+.product-button:hover {
+  opacity: 0.8;
+}
+
+.add-to-cart {
+  background-color: #c2185b;
+  color: white;
+}
+
+.add-to-wishlist {
+  background-color: #607d8b;
+  color: white;
 }

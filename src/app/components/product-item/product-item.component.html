@@ -2,6 +2,8 @@
     <img class="product-image" src="{{product?.imageUrl}}" alt="{{product?.name}}">
     <span class="product-price">{{product?.price | currency}}</span>
     <input type="number" class="product-quantity" name="quantity" min="1" max="10" [defaultValue]="1">
-    <button class="product-button" (click)="addToCart(product)">Add to cart</button>
+    <button class="product-button add-to-cart" (click)="addToCart(product)">Add to cart</button>
+    <button class="product-button add-to-wishlist" (click)="addToWishList(product)">Add to wishlist</button>
+
 </p>
 

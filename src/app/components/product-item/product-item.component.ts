@@ -7,19 +7,22 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
-
-
+  
+  
   @Input() product: Product | null;
-
+  
   constructor() {
     this.product = new Product();
   }
-
+  
   ngOnInit(): void {
   }
-
+  
   addToCart(arg0: Product|null) {
     throw new Error('Method not implemented.');
   }
-
+  
+  addToWishList(arg0: Product|null) {
+    throw new Error('Method not implemented.');
+  }
 }
