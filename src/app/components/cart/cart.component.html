@@ -1,1 +1,21 @@
-<p>cart works!</p>
+<ng-template #emptyCart>
+  <p class="empty-cart-message">
+    Your cart is empty! Add an item to complete a purchase.
+  </p>
+</ng-template>
+
+<div *ngIf="cartItems.length > 0; else emptyCart">
+  <p>Your cart products</p>
+  <span class="grid-products">
+    <app-product-item
+      *ngFor="let product of cartItems"
+      [product]="product"
+      [isInCart]="true"
+    ></app-product-item>
+  </span>
+
+  <div class="total-price">
+    <p>Total price: {{ totalPrice | currency }}</p>
+    <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+  </div>
+</div>
