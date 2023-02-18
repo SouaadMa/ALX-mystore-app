@@ -1,0 +1,13 @@
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 280px));
+  grid-gap: 2%;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.empty-wishlist-message {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}

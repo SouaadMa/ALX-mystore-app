@@ -1,1 +1,17 @@
-<p>wishlist works!</p>
+<ng-template #emptyWishlist>
+  <p class="empty-wishlist-message">
+    Your wishlist is empty! Add your favorite items here.
+  </p>
+</ng-template>
+
+<div *ngIf="wishlistItems.length > 0; else emptyWishlist">
+  <p>Your wishlist products</p>
+  <span class="grid-products">
+    <app-product-item
+      *ngFor="let product of wishlistItems"
+      [product]="product"
+      [isInWishList]="true"
+    ></app-product-item>
+  </span>
+
+</div>

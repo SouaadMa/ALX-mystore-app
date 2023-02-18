@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { CartService } from '../../services/cart.service';
+import { WishlistService } from '../../services/wishlist.service';
 
 @Component({
   selector: 'app-product-item',
@@ -12,7 +13,10 @@ export class ProductItemComponent {
   @Input() isInCart: boolean = false;
   @Input() isInWishList: boolean = false;
 
-  constructor(private cartService: CartService) {
+  constructor(
+    private cartService: CartService,
+    private wishlistService: WishlistService
+  ) {
     this.product = new Product();
   }
 
@@ -27,8 +31,13 @@ export class ProductItemComponent {
     }
   }
 
-  addToWishList(arg0: Product | null) {
-    throw new Error('Method not implemented.');
+  addToWishList(arg0: Product | null): void {
+    if (arg0) {
+      this.wishlistService.addToWishlist(arg0);
+      window.alert('Product added to wishlist');
+    } else {
+      window.alert('Product not added to wishlist');
+    }
   }
 
   removeFromCart(arg0: Product | null) {
@@ -41,6 +50,11 @@ export class ProductItemComponent {
   }
 
   removeFromWishList(arg0: Product | null) {
-    throw new Error('Method not implemented.');
+    if (arg0) {
+      this.wishlistService.removeProduct(arg0);
+      window.alert('Product removed from wishlist');
+    } else {
+      window.alert('Product not removed from wishlist');
+    }
   }
 }
