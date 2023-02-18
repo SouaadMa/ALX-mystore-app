@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 
@@ -36,6 +37,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     MatToolbarModule,
     MatFormFieldModule,
     MatMenuModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [],

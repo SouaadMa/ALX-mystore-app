@@ -1,5 +1,8 @@
 <p class="product-container">
-  {{ product?.name }}
+  <!--Link to product details-->
+  <a [routerLink]="['/products', product?.id]">
+    {{ product?.name }}
+  </a>
   <img
     class="product-image"
     src="{{ product?.imageUrl }}"

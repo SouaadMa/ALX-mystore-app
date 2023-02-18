@@ -1,1 +1,29 @@
-<p>product-item-details works!</p>
+<p>Product details</p>
+<!-- Product details material -->
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{product.name}}</mat-card-title>
+      <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+      <mat-card-subtitle>{{product.price}}$</mat-card-subtitle>
+      <mat-card-subtitle id="description">{{product.description}}</mat-card-subtitle>
+      <img mat-card-xl-image src={{product.imageUrl}} >
+    </mat-card-title-group>
+  </mat-card-header>
+
+  <mat-card-content *ngIf="product.amount>0">
+    Available amount: {{product.amount}}
+  </mat-card-content>
+  <mat-card-content *ngIf="product.amount<=0">
+    This product is currently out of stock
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button color="primary" class="product-button add-to-cart" (click)="addToCart()">
+      Add to cart
+    </button>
+    <button mat-button color="primary" class="product-button add-to-wishlist" (click)="addToWishlist()">
+      Add to wishlist
+    </button>
+  </mat-card-actions>
+</mat-card>
