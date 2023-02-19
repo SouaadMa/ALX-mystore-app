@@ -18,6 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     CartComponent,
     ProductItemDetailsComponent,
     ConfirmationComponent,
-    WishlistComponent
+    WishlistComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

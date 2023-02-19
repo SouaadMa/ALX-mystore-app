@@ -33,7 +33,7 @@ export class CartComponent {
   }
 
   checkout() {
-    this.cartService.checkout();
+    // this.cartService.checkout();
     this.router.navigate(['/checkout']);
   }
 

@@ -7,7 +7,7 @@
 <div *ngIf="cartItems.length > 0; else emptyCart">
   <div class="total-price">
     <p>Total price: {{ totalPrice }} $</p>
-    <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+    <button class="checkout-button" (click)="checkout()">Checkout</button>
   </div>
   <span class="grid-products">
     <app-product-item
