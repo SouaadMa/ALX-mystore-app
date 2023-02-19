@@ -19,10 +19,13 @@ export class CartService {
     },
   ];
   private cartItemCount = new BehaviorSubject(0);
+  private totalPrice = new BehaviorSubject(0);
+  totalPrice$ = this.totalPrice.asObservable();
 
   constructor() {}
 
   getProducts() {
+    this.totalPrice.next(this.getTotalPrice());
     return this.cartItems;
   }
 
@@ -43,6 +46,7 @@ export class CartService {
       this.cartItems.push(product);
     }
     this.cartItemCount.next(this.cartItemCount.value + 1);
+    this.totalPrice.next(this.getTotalPrice());
   }
 
   removeProduct(product: Product) {
@@ -53,17 +57,23 @@ export class CartService {
       }
     }
     this.cartItemCount.next(this.cartItemCount.value - 1);
+    this.totalPrice.next(this.getTotalPrice());
   }
 
   clearCart() {
     this.cartItems = [];
     this.cartItemCount.next(0);
+    this.totalPrice.next(0);
   }
 
   checkout() {
     console.log('Checkout');
   }
   getTotalPrice(): number {
-    return this.cartItems.reduce((i, j) => i + j.price * j.amount, 0);
+    let sum = 0;
+    for (let p of this.cartItems) {
+      sum += p.price * p.amount;
+    }
+    return sum;
   }
 }

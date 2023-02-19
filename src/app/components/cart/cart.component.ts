@@ -1,7 +1,8 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class CartComponent {
   cartItems: Product[];
   totalPrice: number = 0;
+  private price_subscription: Subscription = new Subscription();
 
   cartService: CartService;
 
@@ -18,11 +20,20 @@ export class CartComponent {
     console.log('CartComponent constructor');
     this.cartService = cartService;
     this.cartItems = cartService.getProducts();
-    this.totalPrice = cartService.getTotalPrice();
+  }
+
+  ngOnInit() {
+    this.price_subscription = this.cartService.totalPrice$.subscribe(value => {
+      this.totalPrice = value;
+    });
   }
 
   checkout() {
     this.cartService.checkout();
     this.router.navigate(['/checkout']);
+  }
+
+  ngOnDestroy() {
+    this.price_subscription.unsubscribe();
   }
 }
