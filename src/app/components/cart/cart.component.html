@@ -5,17 +5,16 @@
 </ng-template>
 
 <div *ngIf="cartItems.length > 0; else emptyCart">
-  <p>Your cart products</p>
+  <div class="total-price">
+    <p>Total price: {{ totalPrice }} $</p>
+    <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+  </div>
   <span class="grid-products">
     <app-product-item
       *ngFor="let product of cartItems"
       [product]="product"
       [isInCart]="true"
+      (changeQuantity)="changeQuantity($event)"
     ></app-product-item>
   </span>
-
-  <div class="total-price">
-    <p>Total price: {{ totalPrice }} $</p>
-    <button class="btn btn-primary" (click)="checkout()">Checkout</button>
-  </div>
 </div>

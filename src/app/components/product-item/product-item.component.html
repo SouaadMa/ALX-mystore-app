@@ -9,13 +9,14 @@
     alt="{{ product?.name }}"
   />
   <span class="product-price">{{ product?.price | currency }}</span>
-  <input
+  <input [(ngModel)]="quantity"
     type="number"
     class="product-quantity"
     name="quantity"
     min="1"
     max="10"
     [defaultValue]="1"
+    (change)="changeQuantityInCart(product)"
   />
   <button
     *ngIf="!isInCart"

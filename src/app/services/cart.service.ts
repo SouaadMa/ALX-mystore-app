@@ -6,6 +6,7 @@ import { Product } from '../models/product';
   providedIn: 'root',
 })
 export class CartService {
+
   private cartItems: Product[] = [
     {
       id: 1,
@@ -31,6 +32,10 @@ export class CartService {
 
   getCartItemCount() {
     return this.cartItemCount;
+  }
+
+  refreshTotalPrice() {
+    this.totalPrice.next(this.getTotalPrice());
   }
 
   addToCart(product: Product) {

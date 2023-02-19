@@ -28,6 +28,10 @@ export class CartComponent {
     });
   }
 
+  changeQuantity(product: Product) {
+    this.cartService.refreshTotalPrice();
+  }
+
   checkout() {
     this.cartService.checkout();
     this.router.navigate(['/checkout']);

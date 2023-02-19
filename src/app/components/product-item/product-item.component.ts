@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { CartService } from '../../services/cart.service';
 import { WishlistService } from '../../services/wishlist.service';
@@ -12,6 +12,8 @@ export class ProductItemComponent {
   @Input() product: Product | null;
   @Input() isInCart: boolean = false;
   @Input() isInWishList: boolean = false;
+  @Output() changeQuantity: EventEmitter<Product> = new EventEmitter();
+  quantity: number = 1;
 
   constructor(
     private cartService: CartService,
@@ -20,11 +22,16 @@ export class ProductItemComponent {
     this.product = new Product();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.isInCart) {
+      this.quantity = this.product ? this.product.amount : 1;
+    }
+  }
 
   addToCart(arg0: Product | null): void {
     if (arg0) {
-      if(this.isInWishList) {
+      arg0.amount = this.quantity;
+      if (this.isInWishList) {
         this.removeFromWishList(arg0);
       }
       this.cartService.addToCart(arg0);
@@ -58,6 +65,15 @@ export class ProductItemComponent {
       window.alert('Product removed from wishlist');
     } else {
       window.alert('Product not removed from wishlist');
+    }
+  }
+
+  changeQuantityInCart(arg0: Product | null) {
+    if (arg0) {
+      console.log('changeQuantityInCart');
+      console.log(this.quantity);
+      arg0.amount = this.quantity;
+      this.changeQuantity.emit(arg0);
     }
   }
 }
