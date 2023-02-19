@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
@@ -22,13 +22,13 @@ export class ProductItemDetailsComponent {
   ) {}
 
   ngOnInit(): void {
-    this.getProduct();
+    this.setProduct();
   }
 
-  getProduct(): void {
+  setProduct(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productService.getProducts().subscribe((products) => {
-      this.products = products;
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
       this.product = this.products.find(
         (product) => product.id === id
       ) as Product;

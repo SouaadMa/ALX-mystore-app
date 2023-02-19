@@ -24,6 +24,9 @@ export class ProductItemComponent {
 
   addToCart(arg0: Product | null): void {
     if (arg0) {
+      if(this.isInWishList) {
+        this.removeFromWishList(arg0);
+      }
       this.cartService.addToCart(arg0);
       window.alert('Product added to cart');
     } else {
