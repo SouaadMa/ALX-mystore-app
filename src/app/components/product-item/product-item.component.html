@@ -16,7 +16,7 @@
     min="1"
     max="10"
     [defaultValue]="1"
-    (change)="changeQuantityInCart(product)"
+    (ngModelChange)="changeQuantityInCart(product)"
   />
   <button
     *ngIf="!isInCart"
