@@ -12,6 +12,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductItemDetailsComponent } from './components/product-item-details/product-item-details.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -44,6 +45,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     MatFormFieldModule,
     MatMenuModule,
     MatCardModule,
+    MatBadgeModule,
     BrowserAnimationsModule
   ],
   providers: [],

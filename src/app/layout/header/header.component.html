@@ -9,7 +9,7 @@
         <span>Home</span>
       </button>
       <button mat-menu-item (click)="onclick_shopping_cart()">
-        <mat-icon>shopping_cart</mat-icon>
+        <mat-icon matBadge="{{cart_length}}" matBadgeColor="accent">shopping_cart</mat-icon>
         <span>Cart</span>
       </button>
       <button mat-menu-item (click)="onclick_wishlist()">

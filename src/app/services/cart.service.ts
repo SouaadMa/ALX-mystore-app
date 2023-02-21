@@ -9,6 +9,7 @@ export class CartService {
 
   private cartItems: Product[] = [];
   private cartItemCount = new BehaviorSubject(0);
+  cartItemCount$ = this.cartItemCount.asObservable();
   private totalPrice = new BehaviorSubject(0);
   totalPrice$ = this.totalPrice.asObservable();
 
@@ -38,8 +39,8 @@ export class CartService {
     }
     if (!added) {
       this.cartItems.push(product);
+      this.cartItemCount.next(this.cartItemCount.value + 1);
     }
-    this.cartItemCount.next(this.cartItemCount.value + 1);
     this.totalPrice.next(this.getTotalPrice());
   }
 

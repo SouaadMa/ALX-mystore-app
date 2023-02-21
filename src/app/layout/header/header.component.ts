@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  sidenav: any;
   
-  constructor(private router: Router) {
+  cart_length: number = 0;
+  private cart_length_subscription: Subscription = new Subscription();
+
+  constructor(private router: Router, private cartService: CartService) {
     console.log('HeaderComponent constructor');
+  }
+
+  ngOnInit() {
+    this.cart_length_subscription = this.cartService.cartItemCount$.subscribe(value => {
+      this.cart_length = value;
+    });
   }
 
   onclick_home_page() {
