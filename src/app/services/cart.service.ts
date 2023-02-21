@@ -7,18 +7,7 @@ import { Product } from '../models/product';
 })
 export class CartService {
 
-  private cartItems: Product[] = [
-    {
-      id: 1,
-      name: 'Product 1',
-      price: 100,
-      amount: 1,
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      imageUrl: 'https://picsum.photos/200/300',
-      category: 'Category 1',
-    },
-  ];
+  private cartItems: Product[] = [];
   private cartItemCount = new BehaviorSubject(0);
   private totalPrice = new BehaviorSubject(0);
   totalPrice$ = this.totalPrice.asObservable();

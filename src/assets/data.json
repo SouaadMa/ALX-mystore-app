@@ -6,7 +6,7 @@
         "amount": 20,
         "description": "Product 1 description",
         "category": "Category 1",
-        "imageUrl": "https://picsum.photos/200/300"
+        "imageUrl": "https://picsum.photos/200/300?random=1"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "amount": 20,
         "description": "Product 2 description",
         "category": "Category 2",
-        "imageUrl": "https://picsum.photos/200/300"
+        "imageUrl": "https://picsum.photos/200/300?random=2"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "amount": 20,
         "description": "Product 3 description",
         "category": "Category 3",
-        "imageUrl": "https://picsum.photos/200/300"
+        "imageUrl": "https://picsum.photos/200/300?random=3"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "amount": 20,
         "description": "Product 4 description",
         "category": "Category 3",
-        "imageUrl": "https://picsum.photos/200/300"
+        "imageUrl": "https://picsum.photos/200/300?random=4"
     },
     {
         "id": 5,
@@ -42,6 +42,15 @@
         "amount": 20,
         "description": "Product 5 description",
         "category": "Category 2",
-        "imageUrl": "https://picsum.photos/200/300"
+        "imageUrl": "https://picsum.photos/200/300?random=5"
+    },
+    {
+        "id": 6,
+        "name": "Product 6",
+        "price": 250,
+        "amount": 10,
+        "description": "Product 6 description",
+        "category": "Category 2",
+        "imageUrl": "https://picsum.photos/200/300?random=6"
     }
 ]
