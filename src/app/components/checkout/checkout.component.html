@@ -4,19 +4,96 @@
   <p>{{ item.price }} $</p>
   <p>x{{ item.amount }}</p>
 </div>
+<div class="checkout-total">
+  <p>Total: {{ total }} $</p>
+</div>
 
+<!-- Checkout Form with validation and error messages -->
 <div>
-  <form class="checkout-form">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" />
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" />
+      <span
+        class="error-message"
+        *ngIf="
+          checkoutForm.get('name')!.invalid &&
+          (checkoutForm.get('name')!.dirty || checkoutForm.get('name')!.touched)
+        "
+      >
+        <span *ngIf="checkoutForm.get('name')!.errors!['required']">
+          Name is required.
+        </span>
+        <span *ngIf="checkoutForm.get('name')!.errors!['minlength']">
+          Name must be at least 3 characters.
+        </span>
+      </span>
+    </div>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" />
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" />
+      <span
+        class="error-message"
+        *ngIf="checkoutForm.get('email')!.invalid &&
+          (checkoutForm.get('email')!.dirty ||
+            checkoutForm.get('email')!.touched)
+        "
+      >
+        <span *ngIf="checkoutForm.get('email')!.errors!['required']">
+          Email is required.
+        </span>
+        <span *ngIf="checkoutForm.get('email')!.errors!['email']">
+          Please enter a valid email.
+        </span>
+      </span>
+    </div>
 
-    <label for="address">Address</label>
-    <input type="text" id="address" name="address" />
+    <div>
+      <label for="address">Address:</label>
+      <input type="text" id="address" formControlName="address" />
+      <span
+        class="error-message"
+        *ngIf="
+          checkoutForm.get('address')!.invalid &&
+          (checkoutForm.get('address')!.dirty ||
+            checkoutForm.get('address')!.touched)
+        "
+      >
+        <span *ngIf="checkoutForm.get('address')!.errors!['required']">
+          Address is required.
+        </span>
+        <span *ngIf="checkoutForm.get('address')!.errors!['minlength']">
+          Address must be at least 3 characters.
+        </span>
+      </span>
+    </div>
 
-    <label for="card">Card Number</label>
-    <input type="text" id="card" name="card" />
+    <div>
+      <label for="card">Card Number:</label>
+      <input type="text" id="card" formControlName="card" />
+      <span
+        class="error-message"
+        *ngIf="
+          checkoutForm.get('card')!.invalid &&
+          (checkoutForm.get('card')!.dirty || checkoutForm.get('card')!.touched)
+        "
+      >
+        <span *ngIf="checkoutForm.get('card')!.errors!['required']">
+          Card Number is required.
+        </span>
+        <span *ngIf="checkoutForm.get('card')!.errors!['minlength']">
+          Card Number must be at least 6 digits.
+        </span>
+        <span *ngIf="checkoutForm.get('card')!.errors!['maxlength']">
+          Card Number must be at most 6 digits.
+        </span>
+        <span *ngIf="checkoutForm.get('card')!.errors!['pattern']">
+          Card Number must be a number.
+        </span>
+      </span>
+    </div>
+
+    <button class="submit-button" type="submit" [disabled]="checkoutForm.invalid">Submit</button>
   </form>
 </div>
